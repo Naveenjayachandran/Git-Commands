@@ -1,0 +1,159 @@
+Initiate a repository:
+# initialize an existing directory as a Git repository
+$ git init
+
+# retrieve an entire repository from a hosted location via URL
+$ git clone [url]
+
+Stage your files:
+# Show modified files in working directory, staged for your next commit
+git status
+
+
+# Add a file as it looks now to your next commit (stage)
+git add [file path]
+
+
+# If you need to add ALL the modified files at once
+git add .
+
+
+# Unstage a file while retaining the changes in working directory
+$ git reset [file]
+
+
+# Difference of what is changed but not staged
+$ git diff
+
+
+# Difference of what is staged but not yet commited
+$ git diff --staged
+
+
+# Commit your staged content as a new commit snapshot
+$ git commit -m "descriptive message"
+
+
+# Add files and Commit your staged content as a new commit snapshot
+$ git commit -a
+
+Manage branch & merge:
+# list your branches. a * will appear next to the currently active branch
+$ git branch
+
+
+# create a new branch at the current commit
+$ git branch [branch-name]
+
+
+# switch to another branch and check it out into your working directory
+$ git checkout
+
+
+# One line command to checkout a new branch
+$ git checkout -b [branch-name]
+
+
+# merge the specified branch’s history into the current one
+$ git merge [branch]
+
+
+# show all commits in the current branch’s history
+$ git log
+
+
+# Git branch rename
+$ git branch -m <new_branch_name>
+
+
+# Delete branch
+$ git branch -d [branch name]
+
+Inspect branch & compare
+# Show the commit history for the currently active branch
+$ git log
+
+
+# Show the commits on branchA that are not on branchB
+$ git log branchB..branchA
+
+
+# Show the commits that changed file, even across renames
+$ git log --follow [file]
+
+
+# Show the diff of what is in branchA that is not in branchB
+$ git diff branchB...branchA
+
+
+# Show any object in Git in human-readable format
+$ git show [SHA]
+$ git show [commit]
+
+# used to give tags to the specified commit.
+$ git tag [commitID]  
+
+Share & Update:
+# add a git URL as an alias
+$ git remote add [alias] [url]
+
+
+# fetch down all the branches from that Git remote
+$ git fetch [alias]
+
+
+# merge a remote branch into your current branch to bring it up to date
+$ git merge [alias]/[branch]
+
+
+# Transmit local branch commits to the remote repository branch
+$ git push [alias] [branch]
+
+
+# Push commits to all branches in your repository
+$ git push –all [variable name]
+
+
+# fetch and merge any commits from the tracking remote branch
+$ git pull
+
+Tracking path changes
+# delete the file from project and stage the removal for commit
+$ git rm [file]
+
+
+# change an existing file path and stage the move
+$ git mv [existing-path] [new-path]
+
+
+# show all commit logs with indication of any paths that moved TEMPO
+$ git log --stat -M
+
+Rewrite history
+# apply any commits of current branch ahead of specified one
+$ git rebase [branch]
+
+
+# clear staging area, rewrite working tree from specified commit
+$ git reset --hard [commit]
+
+Temporary Commits
+# Save modified and staged changes
+$ git stash
+
+
+# list stack-order of stashed file changes
+$ git stash list
+
+
+# write working from top of stash stack
+$ git stash pop
+
+
+# discard the changes from top of stash stack
+$ git stash drop
+
+ Ignoring patterns
+# system wide ignore patern for all local repositories
+$ git config --global core.excludesfile [file]
+
